@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Image Gallery</title>
+</head>
+<body>
+	<h1>Snapshots</h1>
+	<ul>
+		<li>
+			<a href="images/01_cave.jpg" title="A big cave.">cave</a>
+		</li>
+		<li>
+			<a href="images/02_hill.jpg" title="A wonderfull hill.">wonderful hill</a>
+		</li>
+		<li>
+			<a href="images/03_lake.jpg" title="A beautiful lake">beautiful lake</a>
+		</li>
+		<li>
+			<a href="images/04_mountain.png" title="A grand mountain">grand mountain</a>
+		</li>
+		<li>
+			<a href="images/05_avatar.jpg" title="A avatar.jpg">avatar</a>
+		</li>
+	</ul>
+	<hr>
+	<img id="placeholder" src="images/09_beauty.png" alt="image gallery"/>
+
+	<script>
+
+		function showPic(var whichPic) {
+			var source = whichPic.getAttribute("href");
+			var placeholder = document.getElementById("placeholder");
+			placeholder.setAttribute("href", source);
+		}
+
+	</script>
+</body>
+</html>
