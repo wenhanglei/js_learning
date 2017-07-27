@@ -1,5 +1,5 @@
 body {
-	font-family: "Helvetic", "Arial", serif;
+	font-family: "Helvetica", "Arial", serif;
 	color: #333;
 	background-color: #ccc;
 	margin: 1em 10%;
@@ -11,7 +11,7 @@ h1 {
 }
 
 a {
-	color: #c60;
+	colar: #c60;
 	background-color: transparent;
 	font-weight: bold;
 	text-decoration: none;
@@ -27,8 +27,14 @@ li {
 	list-style: none;
 }
 
-img {
-	display: block;
-	clear: both;
+#imagegallery {
+	list-style: none;
 }
 
+#imagegallery li {
+	display: inline;
+}
+
+#imagegallery li a img {
+	border: 0;
+}
