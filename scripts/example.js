@@ -1,7 +1,7 @@
 window.onload = function() {
-	var para = document.createElement("p");
-	var testdiv = document.getElementById("testdiv");
-	testdiv.appendChild(para);
-	var txt = document.createTextNode("Hello world");
-	para.appendChild(txt);
+	var request = getHTTPObject();
+	if (request) {
+		request.open("GET", "example.txt", true);
+		request.send();
+	}
 }
