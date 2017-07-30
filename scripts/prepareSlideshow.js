@@ -4,12 +4,15 @@ function prepareSlideshow() {
 	if(!document.getElementById) return false;
 	//make sure the elements exist
 	if(!document.getElementById("linklist")) return false;
-	if(!document.getElementById("preview")) return false;
-	//Apply styles to the preview image
-	var preview = document.getElementById("preview");
-	preview.style.position = "absolute";
-	preview.style.left = "0px";
-	preview.style.top = "0px";
+	var slideshow = document.createElement("div");
+	slideshow.setAttribute("id", "slideshow");
+	var preview = document.createElement("img");
+	preview.setAttribute("src", "images/topics.gif");
+	preview.setAttribute("alt", "building blocks of web design");
+	preview.setAttribute("id", "preview");
+	slideshow.appendChild(preview);
+	var list = document.getElementById("linklist");
+	insertAfter(slideshow, list);
 	//Get all the links in the list
 	var list = document.getElementById("linklist");
 	var links = list.getElementsByTagName("a");
