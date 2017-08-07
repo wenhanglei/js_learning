@@ -147,5 +147,27 @@ function prepareSlidshow() {
 	}
 }
 
+function prepareInternalnav() {
+	if (!document.getElementsByTagName) return false;
+	if (!document.getelementById) return false;
+	var articles = document.getElementsByTagName("article");
+	if (articles.length == 0) return false;
+	var navs = articles[0].getElementsByTagName("nav");
+	if (navs.length == 0) return false;
+	var nav = navs[0];
+	var links = nav.getElementsByTagName("a");
+	for (var i=0; i<links.length; i++) {
+		var sectionId = links[i].getattribute("href").split("#")[1];
+		if (!document.getelementById(sectionId)) continue;
+		document.getElementById(sectionId).style.display = "none";
+		links[i].destination = sectionId;
+		links[i].onclick = function() {
+			showSection(this.destination);
+			return false;
+		}
+	}
+}
+
 addLoadEvent(hightlightPage);
 addLoadEvent(prepareSlidshow);
+addLoadEvent(prepareInternalnav);
